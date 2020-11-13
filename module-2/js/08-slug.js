@@ -7,17 +7,10 @@
  * - Сшиваем в строку с разделителями
  */
 
-// Должно получиться top-10-benefits-of-react-framework
-const title = 'Top 10 benefits of React framework';
+const slugify = function (string) {
+  return string.toLowerCase().split(' ').join('-');
+};
 
-// const normalizedTitle = title.toLowerCase();
-// console.log(normalizedTitle);
-
-// const words = normalizedTitle.split(' ');
-// console.log(words);
-
-// const slug = words.join('-');
-// console.log(slug);
-
-const slug = title.toLowerCase().split(' ').join('-');
-console.log(slug);
+console.log(slugify('Top 10 benefits of React framework'));
+console.log(slugify('Azure Static Web Apps are Awesome'));
+console.log(slugify('Technical writing tips for non-native English speakers'));
