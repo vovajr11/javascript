@@ -41,22 +41,58 @@ const getAllNames = function (allFriends) {
   return names;
 };
 
-console.log(getAllNames(friends));
+// console.log(getAllNames(friends));
 
 /*
  * Получаем имена только друзей которые онлайн
  */
-const getOnlineFriends = function (allFriends) {};
+const getOnlineFriends = function (allFriends) {
+  const onlineFriends = [];
+
+  for (const friend of allFriends) {
+    if (friend.online) {
+      onlineFriends.push(friend);
+    }
+  }
+
+  return onlineFriends;
+};
 
 // console.log(getOnlineFriends(friends));
 
-const getOfflineFriends = function (allFriends) {};
+const getOfflineFriends = function (allFriends) {
+  const offlineFriend = [];
+
+  for (const friend of allFriends) {
+    if (!friend.online) {
+      offlineFriend.push(friend);
+    }
+  }
+
+  return offlineFriend;
+};
 
 // console.log(getOfflineFriends(friends));
 
 // создать 2 массива онлайн и офлайн?
 // если тру - в первый, если нет - во второй
 
-const getFriendsByStatus = function (allFriends) {};
+const getFriendsByStatus = function (allFriends) {
+  const friendsByStatus = {
+    online: [],
+    offline: [],
+  };
 
-// console.log(getFriendsByStatus(friends));
+  for (const friend of friends) {
+    if (friend.online) {
+      friendsByStatus.online.push(friend);
+      continue;
+    }
+
+    friendsByStatus.offline.push(friend);
+  }
+
+  return friendsByStatus;
+};
+
+console.log(getFriendsByStatus(friends));
