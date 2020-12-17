@@ -17,16 +17,16 @@ class Car {
    *  isOn - заведен ли автомобиль, значения true или false. Изначально false
    *  distance - общий киллометраж, изначально 0
    */
-  constructor({ speed, price, maxSpeed, isOn, distance } = {}) {
-    this.speed = speed;
+  constructor({ price, maxSpeed } = {}) {
+    this.speed = 0;
     this.price = price;
     this.maxSpeed = maxSpeed;
-    this.isOn = isOn;
-    this.distance = distance;
+    this.isOn = false;
+    this.distance = 0;
   }
 
-  static getSpecs(mustang) {
-    return console.log(`maxSpeed: ${this.speed}`);
+  static getSpecs(car) {
+    console.log(car);
   }
 
   /*
@@ -34,37 +34,62 @@ class Car {
    * который будет работать с свойством цены автомобиля.
    */
 
+  get price() {
+    return this._price;
+  }
+
+  set price(car) {
+    return (this._price = car);
+  }
+
   /*
    * Добавь код для того чтобы завести автомобиль
    * Записывает в свойство isOn значение true
    */
-  turnOn() {}
+  turnOn() {
+    this.isOn = true;
+  }
 
   /*
    * Добавь код для того чтобы заглушить автомобиль
    * Записывает в свойство isOn значение false,
    * и сбрасывает текущую скорость в 0
    */
-  turnOff() {}
+  turnOff() {
+    this.isOn = false;
+    this.speed = 0;
+  }
 
   /*
    * Добавялет к свойству speed полученное значение,
    * при условии что результирующая скорость
    * не больше чем значение свойства maxSpeed
    */
-  accelerate(value) {}
+  accelerate(value) {
+    if (this.maxSpeed >= value) {
+      this.speed = value;
+    }
+  }
 
   /*
    * Отнимает от свойства speed полученное значение,
    * при условии что результирующая скорость не меньше нуля
    */
-  decelerate(value) {}
+  decelerate(value) {
+    if (this.speed >= 0) {
+      this.speed -= value;
+    }
+  }
 
   /*
    * Добавляет в поле distance киллометраж (hours * speed),
    * но только в том случае если машина заведена!
    */
-  drive(hours) {}
+  drive(hours) {
+    if (this.isOn) {
+      this.distance += hours * this.speed;
+    }
+  }
 }
 
 const mustang = new Car({ maxSpeed: 200, price: 2000 });
