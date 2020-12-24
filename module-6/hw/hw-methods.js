@@ -92,6 +92,37 @@ import users from './users.js';
       .map(user => user.name);
   };
 
-  console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
-  console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+  // console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+  // console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+}
+
+//========= 09 - TASK =========
+{
+  // Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
+
+  const getNamesSortedByFriendsCount = users => {
+    // return users.reduce((acc, user) => acc + user.friends.length, 0).map(user => user.name);
+    return users.sort((a, b) => a.friends.length - b.friends.length);
+  };
+
+  // console.log(getNamesSortedByFriendsCount(users));
+  // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
+}
+
+//========= 10 - TASK =========
+{
+  // Получить массив всех умений всех пользователей (поле skills),
+  // при этом не должно быть повторяющихся умений и они должны быть отсортированы в
+  // алфавитном порядке.
+
+  const getSortedUniqueSkills = users =>
+    users
+      .map(user => user.skills)
+      .reduce((allSkills, user) => [...allSkills, ...user], [])
+      .filter((elem, index, array) => array.indexOf(elem) === index)
+
+      .sort((b, a) => b.localeCompare(a, 'en'));
+
+  console.log(getSortedUniqueSkills(users));
+  // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non'
 }
