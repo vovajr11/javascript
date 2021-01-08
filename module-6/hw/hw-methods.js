@@ -123,6 +123,17 @@ import users from './users.js';
 
       .sort((b, a) => b.localeCompare(a, 'en'));
 
-  console.log(getSortedUniqueSkills(users));
+  // console.log(getSortedUniqueSkills(users));
   // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non'
+}
+
+{
+  const users = [
+    { name: 'Mango', isActive: true, time: 30 },
+    { name: 'Poly', isActive: false, time: 20 },
+    { name: 'Ajax', isActive: true, time: 10 },
+  ];
+
+  const userName = users.map(user => user.name);
+  console.log(userName);
 }

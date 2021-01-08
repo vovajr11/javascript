@@ -90,7 +90,7 @@ const onRequestSuccess = function (response) {
  * Фильтр
  */
 
-const filter = function (array, callback) {
+const filter = (array, callback) => {
     const filteredArray = [];
 
     for (const el of array) {
@@ -110,11 +110,9 @@ const filter = function (array, callback) {
 // 3. если элемент массива удовлетворяет условию то функция вернет true
 // 3. если элемент массива НЕ удовлетворяет условию то функция вернет false
 
-const callback1 = function (value) {
-    return value >= 3;
-};
+// const callback1 = value => value >= 3;
 
-const r1 = filter([1, 2, 3, 4, 5], callback1);
+const r1 = filter([1, 2, 3, 4, 5], value => value >= 3);
 console.log(r1);
 
 const r2 = filter([1, 2, 3, 4, 5, 6, 7, 8], function (value) {
@@ -128,9 +126,5 @@ const fruits = [
     { name: 'bananas', quantity: 100, isFresh: true },
 ];
 
-const getFruitsWithQuantity = function (fruit) {
-    return fruit.quantity >= 120;
-};
-
-const r3 = filter(fruits, getFruitsWithQuantity);
+const r3 = filter(fruits, fruit => fruit.quantity >= 120);
 console.log(r3);
