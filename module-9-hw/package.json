@@ -1,0 +1,20 @@
+{
+  "name": "module-9-hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/vovajr11/JavaScript)"
+  },
+  "author": "Moskalyuk Volodymyr <vova.moskalyuk11jr@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-handlebars-precompile": "^1.0.2"
+  }
+}
