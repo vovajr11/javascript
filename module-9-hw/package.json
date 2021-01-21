@@ -16,5 +16,8 @@
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-handlebars-precompile": "^1.0.2"
+  },
+  "dependencies": {
+    "src": "^1.1.2"
   }
 }
