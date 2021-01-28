@@ -1,0 +1,20 @@
+{
+  "name": "module-11-hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/vovajr11/JavaScript)"
+  },
+  "author": "Moskalyuk Volodymyr <vova.moskalyuk11jr@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-nuke-dist": "^1.0.1"
+  }
+}
